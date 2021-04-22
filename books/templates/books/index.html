@@ -1,0 +1,20 @@
+{% extends 'layouts/books.html' %}
+
+{% block content %}
+    <h1>Books available</h1>
+    <a href="{% url 'Books:create' %}">Create New Book</a>
+    <div class="row">
+        {% for book in books %}
+            <div class="col">
+                <div><span class="bold">Book Title: </span>{{ book.title }}</div>
+                <div><span class="bold">Book Name: </span>{{ book.content }}</div>
+                <a href="{% url 'Books:edit' book.id %}">Edit Book</a>
+                <a href="{% url 'Books:delete' book.id %}">Delete Book</a>
+            </div>
+            <hr>
+        {% empty %}
+            <center>No Books Available</center>
+        {% endfor %}
+    </div>
+{% endblock %}
+
