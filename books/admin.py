@@ -10,7 +10,7 @@ class BookAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'title')
     list_filter = ("categories",)
     search_fields = ('title',)
-    # readonly_fields = ('ISBN',)
+    readonly_fields = ('ISBN',)
 
 
 class CategoryBookInline(admin.StackedInline):

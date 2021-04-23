@@ -18,7 +18,7 @@ class BookForm(ModelForm):
     class Meta:
         model = Book
         fields = '__all__'
-        # exclude = ('ISBN', )
+        exclude = ('ISBN', )
 
     def clean_title(self):
         title: str = self.cleaned_data.get("title")
